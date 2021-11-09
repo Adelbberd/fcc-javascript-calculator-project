@@ -1,17 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { combineReducers, createStore } from 'redux';
+import { Provider } from 'react-redux';
+import appendNumReducer from './redux-reducers/appendNumReducer';
+import expressionReducer from './redux-reducers/expressionReducer';
+import digitLimitReducer from './redux-reducers/digitLimitReducer';
+import hasDecimalReducer from './redux-reducers/hasDecimalReducer';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+const rootReducer = combineReducers({
+	inputNumbers: appendNumReducer,
+	expression: expressionReducer,
+	digitLimit: digitLimitReducer,
+	hasDecimal: hasDecimalReducer,
+});
+
+const store = createStore(
+	rootReducer,
+	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+ReactDOM.render(
+	<React.StrictMode>
+		<Provider store={store}>
+			<App />
+		</Provider>
+	</React.StrictMode>,
+	document.getElementById('root')
+);
+
 reportWebVitals();

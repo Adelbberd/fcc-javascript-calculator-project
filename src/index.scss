@@ -1,0 +1,123 @@
+$base-bg-color: #4cb8c4;
+$calc-bg-color: rgba(29, 43, 100, 0.34);
+$display-bg-color: rgba(229, 229, 229, 0.5);
+$mathOp-bg-color: rgb(212, 214, 173);
+$ac-bg-color: rgba(225, 0, 0, 0.65);
+
+body {
+	margin: 0;
+	// font-family: 'Poppins', sans-serif;
+	font-family: 'Nova Square', cursive;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	box-sizing: border-box;
+	background-color: $base-bg-color;
+	padding: 0;
+	color: #000;
+	font-size: 1.11em;
+	font-weight: 600;
+}
+
+* {
+	border-radius: 5px;
+}
+
+.calculator {
+	background-color: $calc-bg-color;
+	width: 423px;
+	margin: 0px auto; // To be edited later
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	#main-display {
+		background-color: $display-bg-color;
+		width: 85%;
+		margin-top: 20px;
+		text-align: right;
+		word-wrap: break-word;
+
+		p {
+			margin: 10px;
+		}
+
+		.results {
+			color: rgb(228, 230, 190);
+			font-size: 1.25em;
+		}
+	}
+
+	#equals {
+		background-color: $mathOp-bg-color;
+		width: 85%;
+		height: 38px;
+		margin-top: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: inherit;
+		font-size: inherit;
+		border: none;
+	}
+
+	#equals:hover {
+		outline: 2px solid black;
+		border: none;
+		cursor: pointer;
+	}
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	margin: 20px 0px;
+	gap: 10px;
+	width: 85%;
+
+	button {
+		padding: 10px;
+		text-align: center;
+		font-size: inherit;
+		font-weight: inherit;
+		font-family: inherit;
+		border: none;
+	}
+
+	button:hover {
+		outline: 2px solid rgba(231, 233, 187, 1);
+		cursor: pointer;
+	}
+
+	.math-operators:hover {
+		outline: 2px solid black;
+	}
+
+	.digits {
+		background-color: $display-bg-color;
+	}
+
+	.math-operators {
+		background-color: $mathOp-bg-color;
+	}
+
+	#clear {
+		background-color: $ac-bg-color;
+	}
+}
+
+footer,
+#header {
+	width: 432px;
+	margin: 10px auto;
+	text-align: center;
+	color: $mathOp-bg-color;
+	font-weight: normal;
+}
+
+h1 {
+	font-size: 1.5em;
+}
+
+#javascript {
+	color: rgba(29, 43, 100, 0.4);
+}
