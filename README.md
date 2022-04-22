@@ -1,8 +1,8 @@
-## Description.
+# Description.
 
 JavaScript Calculator App.
 
-# Languages and Libraries Used.
+## Languages and Libraries Used.
 
 1. JavaScript.
 2. ReactJS and Redux.
